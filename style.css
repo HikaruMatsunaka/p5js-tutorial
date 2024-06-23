@@ -13,9 +13,8 @@ body {
 
 h1 {
   font-family: "Arial", sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  color: #ff0000;
+  font-size: 32px;
+  color: #33ff00;
 }
 
 .container {

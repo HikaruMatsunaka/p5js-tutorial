@@ -2,29 +2,33 @@
 //これにより、複数のスケッチが同じページに存在しても、互いに干渉しない
 // sketch2.js
 let sketch2 = function (p) {
+  let textOpacity = 255; // テキストの初期透明度
+  let deltaOpacity = -4; // 透明度の変化量
+
   p.setup = function () {
-    let canvas = p.createCanvas(p.windowWidth / 2, p.windowHeight, p.WEBGL);
+    let canvas = p.createCanvas(p.windowWidth / 2, p.windowHeight);
     canvas.parent("canvas2");
-    p.background(200);
+    p.background(255);
+    p.textSize(20); // テキストのサイズを24に固定
+    p.textAlign(p.CENTER, p.CENTER); // テキストの配置を中央揃えに設定
   };
 
   p.draw = function () {
-    p.background(200);
+    p.background(255);
 
-    // 本を置くシグニファイア
-    p.push();
-    p.fill(150);
-    p.translate(-p.width / 4, 0, 0);
-    p.rotateY(p.frameCount * 0.01);
-    p.box(100, 20, 60);
-    p.pop();
+    // テキストの描画
+    p.fill(10, 10, 10, textOpacity); // 黒色のテキスト、透明度を反映
+    p.text(
+      "本を撮影して、ここに立てかけてください。",
+      p.width / 2,
+      p.height / 2
+    ); // 中央に配置
 
-    p.push();
-    p.fill(150);
-    p.translate(p.width / 4, 0, 0);
-    p.rotateY(p.frameCount * 0.01);
-    p.box(100, 20, 60);
-    p.pop();
+    // 透明度の更新
+    textOpacity += deltaOpacity;
+    if (textOpacity >= 255 || textOpacity <= 50) {
+      deltaOpacity *= -1; // 透明度が255または50を超えたら反転する
+    }
   };
 };
 
