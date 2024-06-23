@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css" />
     <!-- p5.jsを読み込みむ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script src="sketch.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+    <script src="sketch1.js" defer></script>
+    <script src="sketch2.js" defer></script>
   </head>
   <body>
     <h1>Hikaru Matsunaka</h1>
@@ -17,7 +19,11 @@
       <div>
         <h2>Profile</h2>
         <div id="sketch-container"></div>
-        <p>Hi, I'm Hikaru Matsunaka. I'm a web developer.</p>
+        <p class="highlight">Hi, I'm Hikaru Matsunaka. I'm a web developer.</p>
+        <div class="container">
+          <div id="canvas1" class="canvas-container"></div>
+          <div id="canvas2" class="canvas-container"></div>
+        </div>
       </div>
     </section>
   </body>
